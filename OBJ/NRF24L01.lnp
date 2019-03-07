@@ -19,6 +19,8 @@
 "..\obj\stm32f10x_spi.o"
 "..\obj\stm32f10x_usart.o"
 "..\obj\stm32f10x_tim.o"
+"..\obj\nrf_protocol.o"
+"..\obj\nrf_protocol_variable.o"
 --strict --scatter "..\OBJ\NRF24L01.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
