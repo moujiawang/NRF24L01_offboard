@@ -30,8 +30,6 @@
 ..\obj\24l01.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\obj\24l01.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\24l01.o: ..\STM32F10x_FWLib\inc\misc.h
-..\obj\24l01.o: ..\HARDWARE\LCD\lcd.h
-..\obj\24l01.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\24l01.o: ..\SYSTEM\delay\delay.h
 ..\obj\24l01.o: ..\HARDWARE\SPI\spi.h
 ..\obj\24l01.o: ..\SYSTEM\usart\usart.h
