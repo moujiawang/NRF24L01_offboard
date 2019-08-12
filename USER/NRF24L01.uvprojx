@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\LCD;..\HARDWARE\RTC;..\HARDWARE\RTC;..\HARDWARE\WKUP;..\HARDWARE\ADC;..\HARDWARE\DAC;..\HARDWARE\DMA;..\HARDWARE\IIC;..\HARDWARE\24CXX;..\HARDWARE\SPI;..\HARDWARE\FLASH;..\HARDWARE\TOUCH;..\HARDWARE\REMOTE;..\HARDWARE\ADXL345;..\HARDWARE\DS18B20;..\HARDWARE\NRF24L01;..\nrf_protocol</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\LCD;..\HARDWARE\RTC;..\HARDWARE\RTC;..\HARDWARE\WKUP;..\HARDWARE\ADC;..\HARDWARE\DAC;..\HARDWARE\DMA;..\HARDWARE\IIC;..\HARDWARE\24CXX;..\HARDWARE\SPI;..\HARDWARE\FLASH;..\HARDWARE\TOUCH;..\HARDWARE\REMOTE;..\HARDWARE\ADXL345;..\HARDWARE\DS18B20;..\HARDWARE\NRF24L01;..\nrf_protocol;..\HARDWARE\EXTI</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -453,6 +453,11 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\NRF24L01\24l01.c</FilePath>
             </File>
+            <File>
+              <FileName>exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\EXTI\exti.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -527,6 +532,11 @@
               <FileName>stm32f10x_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STM32F10x_FWLib\src\stm32f10x_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32F10x_FWLib\src\stm32f10x_exti.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -38,3 +38,4 @@
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: ..\HARDWARE\NRF24L01\24l01.h
 ..\obj\main.o: ..\nrf_protocol\nrf_protocol.h
+..\obj\main.o: ..\HARDWARE\EXTI\exti.h

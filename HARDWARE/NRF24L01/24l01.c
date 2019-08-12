@@ -56,7 +56,7 @@ void NRF24L01_Init(NRF24L01_MODE RxTx_mode)
 	SPI2_Init();    										 //初始化SPI	 
 	SPI2_SetSpeed(SPI_BaudRatePrescaler_8); 				 //spi速度为9Mhz（24L01的最大SPI时钟为10Mhz）
 
-
+	while( NRF24L01_Check() );								 //检测NRF24L01硬件是否连接正常，如果连接正常以后才能进行下一步的配置
 	//使能管道0动态包
 	NRF24L01_Write_Reg(NRF_WRITE_REG+EN_AA,ENAA_P0);						//使能管道0自动应答
 	NRF24L01_Write_Reg(NRF_WRITE_REG+L01REG_FEATRUE,EN_DPL|EN_ACK_PAY);		//enable DPL and enable payload with ACK
@@ -75,7 +75,7 @@ void NRF24L01_Init(NRF24L01_MODE RxTx_mode)
 	NRF24L01_FlushRX();														//复位RX FIFO指针 
 	if( RxTx_mode == RX_MODE )
 	{
-		NRF24L01_Write_Reg(NRF_WRITE_REG+CONFIG, 0x0b);						//配置基本工作模式的参数;PWR_UP,EN_CRC,CRC_1byte,接收模式 
+		NRF24L01_Write_Reg(NRF_WRITE_REG+CONFIG, 0x3b);						//配置基本工作模式的参数;PWR_UP,EN_CRC,CRC_1byte,接收模式,屏蔽掉发送最大次数中断和发送完成中断，只打开了接收完成中断
 	}
 	if( RxTx_mode == TX_MODE )
 	{
