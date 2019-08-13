@@ -69,7 +69,6 @@ void PID_assignment(const u8 *rx_buff, PID_PARAS *PID_paras)
 			PID_paras->PID_Roll_para.Kd_Ext = *(rx_buff+6);
 			PID_paras->PID_Roll_para.SetPoint_Ext= *(int16_t*)&rx_buff[7];
 		};break;
-		defualt:;break;
 	}
 }
 

@@ -40,7 +40,7 @@ void NRF24L01_Init(NRF24L01_MODE RxTx_mode)
  	
 	//初始化NRF_CSN，NRF_CE，推免输出
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7|				 //NRF_CSN
-								  GPIO_Pin_8;	 			 //NRF_CE 
+																GPIO_Pin_8;	 			 //NRF_CE 
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出
  	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
  	GPIO_Init(GPIOG, &GPIO_InitStructure);                   //初始化指定IO,推挽 
@@ -83,7 +83,7 @@ void NRF24L01_Init(NRF24L01_MODE RxTx_mode)
 	}
 //由于TX FIFO 和 Rx FIFO,而且CE始终为高，所以此时NRF24L01要么为接受模式，要么被设置成发送模式，处于Standby-Ⅱ模式
 	
-//	NRF24L01_CE=0; 															//使能24L01,次PCB的CE引脚与VCC连在了一起（设计错误），一直置高；
+//	NRF24L01_CE=0; 															//使能24L01,次PCB的CE引脚与VCC连在了一起（设计错误），一直置高；CE引脚置高模拟机载板CE与VCC连在一起的情况	
 	 		 	 
 }
 //检测24L01是否存在

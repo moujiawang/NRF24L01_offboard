@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\NRF24L01.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\NRF24L01.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Sun Aug 11 15:42:27 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Mon Aug 12 22:12:43 2019
 <BR><P>
 <H3>Maximum Stack Usage =        100 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -232,22 +232,20 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
 
-<P><STRONG><a name="[55]"></a>main</STRONG> (Thumb, 410 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[55]"></a>main</STRONG> (Thumb, 486 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = main &rArr; uart_init &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_PriorityGroupConfig
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Buf
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Buf
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushRX
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Check
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_ACK_W_Packet
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushRX
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_ACK_W_Packet
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTIx_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
@@ -283,174 +281,171 @@ Global Symbols
 <P><STRONG><a name="[49]"></a>SystemInit</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, system_stm32f10x.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = SystemInit &rArr; SetSysClock &rArr; SetSysClockTo72
 </UL>
-<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(.text)
 </UL>
 <P><STRONG><a name="[b6]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 142 bytes, Stack size 8 bytes, system_stm32f10x.o(.text), UNUSED)
 
-<P><STRONG><a name="[6b]"></a>SPI2_Init</STRONG> (Thumb, 132 bytes, Stack size 32 bytes, spi.o(.text))
+<P><STRONG><a name="[69]"></a>SPI2_Init</STRONG> (Thumb, 132 bytes, Stack size 32 bytes, spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = SPI2_Init &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Init
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Cmd
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Init
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Cmd
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
 </UL>
 
-<P><STRONG><a name="[72]"></a>SPI2_SetSpeed</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, spi.o(.text))
+<P><STRONG><a name="[70]"></a>SPI2_SetSpeed</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SPI2_SetSpeed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Cmd
+<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Cmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Check
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Check
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
 </UL>
 
-<P><STRONG><a name="[73]"></a>SPI2_ReadWriteByte</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, spi.o(.text))
+<P><STRONG><a name="[71]"></a>SPI2_ReadWriteByte</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SPI2_ReadWriteByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_SendData
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_ReceiveData
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_GetFlagStatus
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_SendData
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_ReceiveData
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_GetFlagStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Buf
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Buf
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Buf
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Buf
 </UL>
 
-<P><STRONG><a name="[64]"></a>NRF24L01_Write_Reg</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, 24l01.o(.text))
+<P><STRONG><a name="[62]"></a>NRF24L01_Write_Reg</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, 24l01.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = NRF24L01_Write_Reg &rArr; SPI2_ReadWriteByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_SetTRMode
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_PowerDown_Mode
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushTX
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushTX
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushRX
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushRX
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[68]"></a>NRF24L01_FlushRX</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, 24l01.o(.text))
+<P><STRONG><a name="[66]"></a>NRF24L01_FlushRX</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, 24l01.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = NRF24L01_FlushRX &rArr; NRF24L01_Write_Reg &rArr; SPI2_ReadWriteByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
+<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
 </UL>
-<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[77]"></a>NRF24L01_FlushTX</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, 24l01.o(.text))
+<P><STRONG><a name="[75]"></a>NRF24L01_FlushTX</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, 24l01.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = NRF24L01_FlushTX &rArr; NRF24L01_Write_Reg &rArr; SPI2_ReadWriteByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
+<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
 </UL>
-<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
 </UL>
 
-<P><STRONG><a name="[78]"></a>NRF24L01_Write_Buf</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, 24l01.o(.text))
+<P><STRONG><a name="[76]"></a>NRF24L01_Write_Buf</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, 24l01.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = NRF24L01_Write_Buf &rArr; SPI2_ReadWriteByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Check
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Check
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_ACK_W_Packet
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_ACK_W_Packet
 </UL>
 
-<P><STRONG><a name="[5e]"></a>NRF24L01_Init</STRONG> (Thumb, 242 bytes, Stack size 16 bytes, 24l01.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = NRF24L01_Init &rArr; SPI2_Init &rArr; GPIO_Init
-</UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Buf
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushTX
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_SetSpeed
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushRX
-</UL>
-<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[65]"></a>NRF24L01_Read_Buf</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, 24l01.o(.text))
+<P><STRONG><a name="[63]"></a>NRF24L01_Read_Buf</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, 24l01.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = NRF24L01_Read_Buf &rArr; SPI2_ReadWriteByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Check
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Check
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[60]"></a>NRF24L01_Check</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, 24l01.o(.text))
+<P><STRONG><a name="[77]"></a>NRF24L01_Check</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, 24l01.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = NRF24L01_Check &rArr; NRF24L01_Write_Buf &rArr; SPI2_ReadWriteByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Buf
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_SetSpeed
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Buf
+<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Buf
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_SetSpeed
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Buf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
+</UL>
+
+<P><STRONG><a name="[5e]"></a>NRF24L01_Init</STRONG> (Thumb, 252 bytes, Stack size 16 bytes, 24l01.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = NRF24L01_Init &rArr; NRF24L01_Check &rArr; NRF24L01_Write_Buf &rArr; SPI2_ReadWriteByte
+</UL>
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Check
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Buf
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushTX
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_SetSpeed
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushRX
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[63]"></a>NRF24L01_Read_Reg</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, 24l01.o(.text))
+<P><STRONG><a name="[61]"></a>NRF24L01_Read_Reg</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, 24l01.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = NRF24L01_Read_Reg &rArr; SPI2_ReadWriteByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_SetTRMode
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_PowerDown_Mode
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_RxPacket
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[79]"></a>NRF24L01_TxPacket</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, 24l01.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Buf
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
+<P><STRONG><a name="[78]"></a>NRF24L01_TxPacket</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, 24l01.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Buf
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
 </UL>
 
-<P><STRONG><a name="[62]"></a>NRF24L01_RxPacket</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, 24l01.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = NRF24L01_RxPacket &rArr; NRF24L01_FlushTX &rArr; NRF24L01_Write_Reg &rArr; SPI2_ReadWriteByte
-</UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushTX
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Buf
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushRX
-</UL>
-<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[7a]"></a>NRF24L01_RxPacket</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, 24l01.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushTX
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Buf
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_FlushRX
 </UL>
 
 <P><STRONG><a name="[7b]"></a>NRF24L01_PowerDown_Mode</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, 24l01.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
+<BR><BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
 </UL>
 
 <P><STRONG><a name="[7c]"></a>NRF24L01_SetTRMode</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, 24l01.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
+<BR><BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Reg
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Read_Reg
 </UL>
 
-<P><STRONG><a name="[61]"></a>NRF24L01_ACK_W_Packet</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, 24l01.o(.text))
+<P><STRONG><a name="[60]"></a>NRF24L01_ACK_W_Packet</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, 24l01.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = NRF24L01_ACK_W_Packet &rArr; NRF24L01_Write_Buf &rArr; SPI2_ReadWriteByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Buf
+<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Write_Buf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -461,7 +456,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_EXTILineConfig
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_Init
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -483,9 +478,9 @@ Global Symbols
 
 <P><STRONG><a name="[b7]"></a>delay_us</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, delay.o(.text), UNUSED)
 
-<P><STRONG><a name="[7a]"></a>delay_ms</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, delay.o(.text), UNUSED)
+<P><STRONG><a name="[79]"></a>delay_ms</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, delay.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_SetTRMode
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_TxPacket
 </UL>
 
 <P><STRONG><a name="[5a]"></a>_sys_exit</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, usart.o(.text))
@@ -501,8 +496,8 @@ Global Symbols
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Cmd
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -727,10 +722,10 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
 
-<P><STRONG><a name="[6e]"></a>GPIO_Init</STRONG> (Thumb, 278 bytes, Stack size 24 bytes, stm32f10x_gpio.o(.text))
+<P><STRONG><a name="[6c]"></a>GPIO_Init</STRONG> (Thumb, 278 bytes, Stack size 24 bytes, stm32f10x_gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
 </UL>
@@ -745,8 +740,8 @@ Global Symbols
 
 <P><STRONG><a name="[bf]"></a>GPIO_ReadOutputData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[6f]"></a>GPIO_SetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
+<P><STRONG><a name="[6d]"></a>GPIO_SetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
 </UL>
 
@@ -825,15 +820,15 @@ Global Symbols
 
 <P><STRONG><a name="[da]"></a>RCC_AHBPeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[6c]"></a>RCC_APB2PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
+<P><STRONG><a name="[6a]"></a>RCC_APB2PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NRF24L01_Init
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTIx_Init
 </UL>
 
-<P><STRONG><a name="[6d]"></a>RCC_APB1PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
+<P><STRONG><a name="[6b]"></a>RCC_APB1PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
 </UL>
 
 <P><STRONG><a name="[88]"></a>RCC_APB2PeriphResetCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
@@ -865,10 +860,10 @@ Global Symbols
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
 
-<P><STRONG><a name="[70]"></a>SPI_Init</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, stm32f10x_spi.o(.text))
+<P><STRONG><a name="[6e]"></a>SPI_Init</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, stm32f10x_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SPI_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
 </UL>
 
 <P><STRONG><a name="[8e]"></a>I2S_Init</STRONG> (Thumb, 226 bytes, Stack size 56 bytes, stm32f10x_spi.o(.text), UNUSED)
@@ -879,9 +874,9 @@ Global Symbols
 
 <P><STRONG><a name="[e2]"></a>I2S_StructInit</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text), UNUSED)
 
-<P><STRONG><a name="[71]"></a>SPI_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_SetSpeed
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
+<P><STRONG><a name="[6f]"></a>SPI_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_SetSpeed
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_Init
 </UL>
 
 <P><STRONG><a name="[e3]"></a>I2S_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text), UNUSED)
@@ -890,12 +885,12 @@ Global Symbols
 
 <P><STRONG><a name="[e5]"></a>SPI_I2S_DMACmd</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text), UNUSED)
 
-<P><STRONG><a name="[75]"></a>SPI_I2S_SendData</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
+<P><STRONG><a name="[73]"></a>SPI_I2S_SendData</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
 </UL>
 
-<P><STRONG><a name="[76]"></a>SPI_I2S_ReceiveData</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
+<P><STRONG><a name="[74]"></a>SPI_I2S_ReceiveData</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
 </UL>
 
 <P><STRONG><a name="[e6]"></a>SPI_NSSInternalSoftwareConfig</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text), UNUSED)
@@ -914,8 +909,8 @@ Global Symbols
 
 <P><STRONG><a name="[ed]"></a>SPI_BiDirectionalLineConfig</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text), UNUSED)
 
-<P><STRONG><a name="[74]"></a>SPI_I2S_GetFlagStatus</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
+<P><STRONG><a name="[72]"></a>SPI_I2S_GetFlagStatus</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI2_ReadWriteByte
 </UL>
 
 <P><STRONG><a name="[ee]"></a>SPI_I2S_ClearFlag</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_spi.o(.text), UNUSED)
@@ -965,7 +960,7 @@ Global Symbols
 
 <P><STRONG><a name="[f9]"></a>USART_LINCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[66]"></a>USART_SendData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
+<P><STRONG><a name="[64]"></a>USART_SendData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -993,7 +988,7 @@ Global Symbols
 
 <P><STRONG><a name="[103]"></a>USART_IrDACmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[67]"></a>USART_GetFlagStatus</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
+<P><STRONG><a name="[65]"></a>USART_GetFlagStatus</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1066,16 +1061,16 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[6a]"></a>SetSysClockTo72</STRONG> (Thumb, 214 bytes, Stack size 12 bytes, system_stm32f10x.o(.text))
+<P><STRONG><a name="[68]"></a>SetSysClockTo72</STRONG> (Thumb, 214 bytes, Stack size 12 bytes, system_stm32f10x.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = SetSysClockTo72
 </UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
+<BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
 </UL>
 
-<P><STRONG><a name="[69]"></a>SetSysClock</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system_stm32f10x.o(.text))
+<P><STRONG><a name="[67]"></a>SetSysClock</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system_stm32f10x.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = SetSysClock &rArr; SetSysClockTo72
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockTo72
+<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockTo72
 </UL>
 <BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
