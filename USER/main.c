@@ -27,14 +27,16 @@ u8 TX_Result;
 u8 Mode = 0xff;
 u8 T = 0;
 u8 Rx_buf[RX_PLOAD_WIDTH] = {0};
-u8 Tx_buf[TX_BUF_MAX][TX_PLOAD_WIDTH] = {0};							//Tx_buf设置了缓冲
+u8 Tx_buf[TX_PLOAD_WIDTH] = {0,1};							//Tx_buf设置了缓冲
 u8 i, j;
 u8 RX_OK_FLAG = 0;
 u8 rx_len = 0;
+u8 tx_len = 2;			//开始上电后，默认发送0x00 表示fault mode的命令到下位机
 
 u8 command_buf_count = 0;
 
-
+u8 sta= 0;
+u8 Res;
  int main(void)
  {	
 	delay_init();	    																			//延时函数初始化	  
@@ -44,37 +46,27 @@ u8 command_buf_count = 0;
  	NRF24L01_Init(RX_MODE);    																		//初始化NRF24L01为接收模式 
 	EXTIx_Init();
 
-	NRF24L01_ACK_W_Packet(&Tx_buf[command_buf_count][0],1);																//最开始发送的数据为故障模式， 0x00
+	NRF24L01_ACK_W_Packet(Tx_buf,2);											//最开始发送的数据为故障模式， 0x00
 	
 
 	while(1)
 	{
+ 
 		if(USART_RX_STA&0x8000)//串口数据接收完成.
 		{
-			for(i = 0; i < (USART_RX_STA&0X3FFF); i++)
-				Tx_buf[command_buf_count][i] = USART_RX_BUF[i];
-			command_buf_count++;
+			tx_len = (u8)(USART_RX_STA&0X3FFF);//刷新接收到的指令（也就是后面要无线发送的指令，所以取名tx_len）数据长度，
+			for(i = 0; i < tx_len; i++)
+				Tx_buf[i] = USART_RX_BUF[i];
 			USART_RX_STA = 0;
 		}
-		
+
 		if( RX_OK_FLAG ) 																			//接收到数据			
 		{
 			RX_OK_FLAG =0;
-			rx_len = NRF24L01_Read_Reg(R_RX_PL_WID);												//读取接收到的数据长度
-			if((rx_len > 0)&& (rx_len < 33))
+			if((rx_len > 0) && (rx_len < 33))
 			{
-				NRF24L01_Write_Reg(NRF_WRITE_REG+STATUS,(RX_Result & RX_OK));						//清除TX_DS或MAX_RT中断标志
-				NRF24L01_Read_Buf(RD_RX_PLOAD,Rx_buf,rx_len);					//读取数据
-				NRF24L01_ACK_W_Packet(&Tx_buf[0][0],i);	
-				if(command_buf_count > 1)
-				{
-					for(i =0; i < command_buf_count-1; i++)
-						for(j = 0; j < TX_PLOAD_WIDTH; j++)
-							Tx_buf[i][j] = Tx_buf[i+1][j];
-					command_buf_count--;
-				}
-				else
-					command_buf_count = 0;
+
+				NRF24L01_ACK_W_Packet(Tx_buf,tx_len);	
 				for(i = 0; i < rx_len; i++)
 					USART_TX_BUF[i] = Rx_buf[i];
 				for(i =0;i < rx_len ; i++)
@@ -89,7 +81,9 @@ u8 command_buf_count = 0;
 			}
 			else//如果数据长度异常则丢弃数据		
 			{
-				NRF24L01_FlushRX();																		
+				NRF24L01_FlushRX();	
+				NRF24L01_FlushTX();	
+				NRF24L01_Write_Reg(NRF_WRITE_REG+STATUS,RX_OK|TX_OK|MAX_TX);							//清除所有的中断标志
 			}
 		}
  

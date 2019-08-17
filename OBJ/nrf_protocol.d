@@ -1,7 +1,7 @@
 ..\obj\nrf_protocol.o: ..\nrf_protocol\nrf_protocol.c
 ..\obj\nrf_protocol.o: ..\nrf_protocol\write_protocol_variable.h
 ..\obj\nrf_protocol.o: ..\nrf_protocol\nrf_protocol.h
-..\obj\nrf_protocol.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\nrf_protocol.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\nrf_protocol.o: ..\USER\stm32f10x.h
 ..\obj\nrf_protocol.o: ..\CORE\core_cm3.h
 ..\obj\nrf_protocol.o: ..\USER\system_stm32f10x.h

@@ -64,7 +64,7 @@ void NRF24L01_Init(NRF24L01_MODE RxTx_mode)
 	NRF24L01_Write_Reg(NRF_WRITE_REG+EN_RXADDR,ERX_P0);						//使能通道0的接收地址 
 	NRF24L01_Write_Reg(NRF_WRITE_REG+SETUP_AW,ADR_WIDTH);					//选择TX/RX的地址宽度
 //	NRF24L01_Write_Reg(NRF_WRITE_REG+RX_PW_P0,RX_PLOAD_WIDTH);				//选择所有通道的有效数据宽度
-	NRF24L01_Write_Reg(NRF_WRITE_REG+SETUP_RETR,ARD_500US|ARC_15);			//设置自动重发间隔时间:500us + 86us;最大自动重发次数:15次
+	NRF24L01_Write_Reg(NRF_WRITE_REG+SETUP_RETR,ARD_2000US|ARC_15);			//设置自动重发间隔时间:500us + 86us;最大自动重发次数:15次
 	NRF24L01_Write_Reg(NRF_WRITE_REG+RF_CH,40);	     						//设置RF通信频率
 	NRF24L01_Write_Reg(NRF_WRITE_REG+RF_SETUP,0x26);						//设置TX发射参数,0db增益,250Kbps,低噪声增益开启	
 	
@@ -73,6 +73,7 @@ void NRF24L01_Init(NRF24L01_MODE RxTx_mode)
 	
 	NRF24L01_FlushTX();														//复位TX FIFO指针 
 	NRF24L01_FlushRX();														//复位RX FIFO指针 
+	NRF24L01_Write_Reg(NRF_WRITE_REG+STATUS,RX_OK|TX_OK|MAX_TX);			//清除TX_DS或MAX_RT中断标志
 	if( RxTx_mode == RX_MODE )
 	{
 		NRF24L01_Write_Reg(NRF_WRITE_REG+CONFIG, 0x3b);						//配置基本工作模式的参数;PWR_UP,EN_CRC,CRC_1byte,接收模式,屏蔽掉发送最大次数中断和发送完成中断，只打开了接收完成中断
@@ -247,7 +248,6 @@ void NRF24L01_SetTRMode(NRF24L01_MODE mode)
 
 void NRF24L01_ACK_W_Packet(u8 *Data,u8 Data_Length)
 {
-//	NRF24L01_FlushTX();													//先清除TX FIFO(接收端)，防止写入FIFO的数据丢失连接造成的FIFO堵塞
-
+	NRF24L01_FlushTX();													//先清除TX FIFO(接收端)，防止写入FIFO的数据丢失连接造成的FIFO堵塞
 	NRF24L01_Write_Buf(W_ACK_PAYLOAD,Data,Data_Length);					//向管道0写入W_ACK_PAYLOAD命令,并读取数据
 }

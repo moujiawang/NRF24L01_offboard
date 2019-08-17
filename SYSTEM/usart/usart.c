@@ -86,7 +86,6 @@ u8 USART_TX_BUF[USART_MAX_LEN];     //接收缓冲,最大USART_REC_LEN个字节.
 //bit14，	接收到0x0d
 //bit13~0，	接收到的有效字节数目
 u16 USART_RX_STA=0;       //接收状态标记	  
-  
 void uart_init(u32 bound){
 	//GPIO端口设置
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -108,7 +107,7 @@ void uart_init(u32 bound){
 
 	//Usart1 NVIC 配置
 	NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=2 ;//抢占优先级2
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority= 3 ;//抢占优先级3
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;		//子优先级0
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能
 	NVIC_Init(&NVIC_InitStructure);							//根据指定的参数初始化NVIC寄存器
@@ -123,8 +122,8 @@ void uart_init(u32 bound){
 	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	//收发模式
 
 	USART_Init(USART1, &USART_InitStructure); 						//初始化串口1
-	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);					//开启串口接受中断
-	USART_Cmd(USART1, ENABLE);                    					//使能串口1 
+	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);					//开启串口接受中断  */ 
+	USART_Cmd(USART1, ENABLE);                 					//使能串口1 
 
 }
 
