@@ -75,8 +75,24 @@ void PendSV_Handler(void)
 {
 }
  
+#include "base_timer.h"
+
+extern u16 current_count;
+extern u16 current_count_last;
+extern u8 start_flag;
+extern int8_t direction;
 void SysTick_Handler(void)
 {
+	if(start_flag != 0)	
+	{
+		current_count_last = current_count;
+		current_count = TIM_GetCounter(TIM3);		
+	}
+	if(current_count > current_count_last)
+		direction = 1;
+	if(current_count < current_count_last)
+		direction= -1;
+	base_timer_isr();
 }
 
 /******************************************************************************/

@@ -36,7 +36,7 @@ void EXTIx_Init(void)
   	EXTI_Init(&EXTI_InitStructure);	 										//根据EXTI_InitStruct中指定的参数初始化外设EXTI寄存器
 
     NVIC_InitStructure.NVIC_IRQChannel = EXTI9_5_IRQn;						//使能NRF24L01的IRQ引脚对应的外部中断通道
-  	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x02;			//抢占优先级2， 
+  	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3;			//抢占优先级2， 
   	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x00;					//子优先级1
   	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;							//使能外部中断通道
   	NVIC_Init(&NVIC_InitStructure);
@@ -48,6 +48,8 @@ extern u8 RX_OK_FLAG;
 extern u8 rx_len;
 extern u8 Rx_buf[RX_PLOAD_WIDTH];
 extern u8 sta;
+
+extern u8 start_flag;
 //外部中断EXTI9_5_IRQ服务程序
 
 void EXTI9_5_IRQHandler(void)
@@ -66,6 +68,8 @@ void EXTI9_5_IRQHandler(void)
 		NRF24L01_CE = 1;
 		RX_OK_FLAG = 1;
 		EXTI_ClearITPendingBit(EXTI_Line6);  									//清除LINE6上的中断标志位  
+		if(start_flag > 0)
+			start_flag = 1;															//在TIM4溢出时start_flag会自加，始终保持为1，说明在655.35ms TIM4溢出周期内，有无线数据接收
 	}
 
 }
