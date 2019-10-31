@@ -41,7 +41,7 @@ u8 Res;
  {	
 	delay_init();	    																			//延时函数初始化	  
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);													//中断分组	
-	uart_init(115200);	 																			//串口初始化为115200
+	uart_init(460800);	 																			//串口初始化为115200
 	
  	NRF24L01_Init(RX_MODE);    																		//初始化NRF24L01为接收模式 
 	EXTIx_Init();
@@ -65,7 +65,6 @@ u8 Res;
 			RX_OK_FLAG =0;
 			if((rx_len > 0) && (rx_len < 33))
 			{
-
 				NRF24L01_ACK_W_Packet(Tx_buf,tx_len);	
 				for(i = 0; i < rx_len; i++)
 					USART_TX_BUF[i] = Rx_buf[i];

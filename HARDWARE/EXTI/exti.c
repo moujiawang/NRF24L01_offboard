@@ -59,8 +59,8 @@ void EXTI9_5_IRQHandler(void)
 		rx_len = NRF24L01_Read_Reg(R_RX_PL_WID);								//读取接收到的数据长度
 		NRF24L01_Read_Buf(RD_RX_PLOAD,Rx_buf,rx_len);							//读取数据
 		NRF24L01_Write_Reg(NRF_WRITE_REG+STATUS,sta);							//清除TX_DS或RX_DR中断标志
-		delay_ms(1);
-		sta=NRF24L01_Read_Reg(STATUS);  										//读取状态寄存器的值	 
+		//delay_ms(1);
+		//sta=NRF24L01_Read_Reg(STATUS);  										//读取状态寄存器的值	 
 
 		NRF24L01_FlushRX();														//防止接收端RX FIFO满时，不进行ACK，造成回传数据失败
 		NRF24L01_CE = 1;
