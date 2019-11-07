@@ -64,9 +64,9 @@ void NRF24L01_Init(NRF24L01_MODE RxTx_mode)
 	NRF24L01_Write_Reg(NRF_WRITE_REG+EN_RXADDR,ERX_P0);						//使能通道0的接收地址 
 	NRF24L01_Write_Reg(NRF_WRITE_REG+SETUP_AW,ADR_WIDTH);					//选择TX/RX的地址宽度
 //	NRF24L01_Write_Reg(NRF_WRITE_REG+RX_PW_P0,RX_PLOAD_WIDTH);				//选择所有通道的有效数据宽度
-	NRF24L01_Write_Reg(NRF_WRITE_REG+SETUP_RETR,ARD_2000US|ARC_15);			//设置自动重发间隔时间:500us + 86us;最大自动重发次数:15次
+	NRF24L01_Write_Reg(NRF_WRITE_REG+SETUP_RETR,ARD_1500US|ARC_2);			//设置自动重发间隔时间:1500us + 86us;最大自动重发次数:2次
 	NRF24L01_Write_Reg(NRF_WRITE_REG+RF_CH,40);	     						//设置RF通信频率
-	NRF24L01_Write_Reg(NRF_WRITE_REG+RF_SETUP,0x26);						//设置TX发射参数,0db增益,250Kbps,低噪声增益开启	
+	NRF24L01_Write_Reg(NRF_WRITE_REG+RF_SETUP,0x26);						//设置TX发射参数,0db增益,2Mbps,低噪声增益关闭	
 	
 	NRF24L01_Write_Buf(NRF_WRITE_REG+RX_ADDR_P0,(u8*)RX_ADDRESS,ADR_WIDTH);	//写RX节点地址
 	NRF24L01_Write_Buf(NRF_WRITE_REG+TX_ADDR,(u8*)TX_ADDRESS,ADR_WIDTH); 	//写TX节点地址 

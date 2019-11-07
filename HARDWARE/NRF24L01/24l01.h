@@ -66,12 +66,18 @@
     #define ARD_500US    (0x01<<4)
     #define ARD_750US    (0x02<<4)
     #define ARD_1000US   (0x03<<4)
+	   #define ARD_1500US	 (0x05<<4) 	
     #define ARD_2000US   (0x07<<4)
     //......
     #define ARD_4000US   (0x0F<<4)
     //for bit3-bit0, Auto retransmission Count
     #define ARC_DISABLE   0x00
-    //......
+	#define ARC_1		  0x01
+	#define ARC_2		  0x02
+	#define ARC_3		  0x03
+	#define ARC_4		  0x04
+	#define ARC_5		  0x05
+		 //......
     #define ARC_15        0x0F
 #define RF_CH           0x05  //RF通道,bit6:0,工作通道频率;
 

@@ -36,8 +36,8 @@ void EXTIx_Init(void)
   	EXTI_Init(&EXTI_InitStructure);	 										//根据EXTI_InitStruct中指定的参数初始化外设EXTI寄存器
 
     NVIC_InitStructure.NVIC_IRQChannel = EXTI9_5_IRQn;						//使能NRF24L01的IRQ引脚对应的外部中断通道
-  	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x02;			//抢占优先级2， 
-  	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x00;					//子优先级1
+  	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x03;			//抢占优先级2， 
+  	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x01;					//子优先级1
   	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;							//使能外部中断通道
   	NVIC_Init(&NVIC_InitStructure);
  
@@ -54,16 +54,14 @@ void EXTI9_5_IRQHandler(void)
 {
 	if(EXTI_GetITStatus(EXTI_Line6) != RESET)
 	{
-		NRF24L01_CE = 0;
-		sta=NRF24L01_Read_Reg(STATUS);  										//读取状态寄存器的值	 
+//		NRF24L01_CE = 0;
+		sta=NRF24L01_Read_Reg(STATUS);  										//读取状态寄存器的值	
+		NRF24L01_Write_Reg(NRF_WRITE_REG+STATUS,sta);							//清除TX_DS或RX_DR中断标志
 		rx_len = NRF24L01_Read_Reg(R_RX_PL_WID);								//读取接收到的数据长度
 		NRF24L01_Read_Buf(RD_RX_PLOAD,Rx_buf,rx_len);							//读取数据
-		NRF24L01_Write_Reg(NRF_WRITE_REG+STATUS,sta);							//清除TX_DS或RX_DR中断标志
-		//delay_ms(1);
-		//sta=NRF24L01_Read_Reg(STATUS);  										//读取状态寄存器的值	 
-
 		NRF24L01_FlushRX();														//防止接收端RX FIFO满时，不进行ACK，造成回传数据失败
-		NRF24L01_CE = 1;
+
+//		NRF24L01_CE = 1;
 		RX_OK_FLAG = 1;
 		EXTI_ClearITPendingBit(EXTI_Line6);  									//清除LINE6上的中断标志位  
 	}
