@@ -913,25 +913,25 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       856         26         10          0          0       4340   24l01.o
-       212         18          0          4          0       1015   delay.o
-       172         18          0          0          0        712   exti.o
-       500         46          0         44         32     246021   main.o
-       220         22          0          0          0       1793   misc.o
-       256         10          0          0          0       1085   spi.o
-        64         26        304          0       1536        796   startup_stm32f10x_hd.o
-       284         10          0          0          0       2223   stm32f10x_exti.o
-       860         38          0          0          0       5637   stm32f10x_gpio.o
-        26          0          0          0          0       1178   stm32f10x_it.o
-       932         36          0         20          0       8804   stm32f10x_rcc.o
-       780         14          0          0          0       6518   stm32f10x_spi.o
-      1032         22          0          0          0       8364   stm32f10x_usart.o
+       856         26         10          0          0       4296   24l01.o
+       212         18          0          4          0        987   delay.o
+       172         18          0          0          0        700   exti.o
+       500         46          0         44         32     245869   main.o
+       220         22          0          0          0       1765   misc.o
+       256         10          0          0          0       1073   spi.o
+        64         26        304          0       1536        784   startup_stm32f10x_hd.o
+       284         10          0          0          0       2199   stm32f10x_exti.o
+       860         38          0          0          0       5609   stm32f10x_gpio.o
+        26          0          0          0          0       1162   stm32f10x_it.o
+       932         36          0         20          0       8764   stm32f10x_rcc.o
+       780         14          0          0          0       6494   stm32f10x_spi.o
+      1032         22          0          0          0       8336   stm32f10x_usart.o
          0          0          0          0          0         32   sys.o
-       480         38          0         20          0       1731   system_stm32f10x.o
-       324         18          0          6         68       3187   usart.o
+       480         38          0         20          0       1683   system_stm32f10x.o
+       324         18          0          6         68       3139   usart.o
 
     ----------------------------------------------------------------------
-      7000        342        348         96       1636     293436   Object Totals
+      7000        342        348         96       1636     292892   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          2          2          0          0   (incl. Padding)
 
@@ -979,8 +979,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      7260        354        348         96       1736     292708   Grand Totals
-      7260        354        348         96       1736     292708   ELF Image Totals
+      7260        354        348         96       1736     292164   Grand Totals
+      7260        354        348         96       1736     292164   ELF Image Totals
       7260        354        348         96          0          0   ROM Totals
 
 ==============================================================================
